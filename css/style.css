@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans&display=swap');
+
+
+/* CSS RESET */
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* CSS VARIABLES INITIALIZATION SECTION - Camel case */
+:root {
+   /*  Fonts */
+   --fontFamily: "Work Sans", sans-serif;
+   --backgroundColor-BODY: #000;
+   --fontColor: #fff;
+
+   --link-COLOR: #fff;
+   --linkHover-COLOR: grey;
+   --linkActive-COLOR: white;
+
+}
+
+/* Default Styles */
+html{
+    scroll-behavior: smooth;
+    background-color: var(--backgroundColor-BODY);
+    color: var(--fontColor);
+    font-family: var(--fontFamily);
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.03rem;
+}
+h1, h2 {
+    letter-spacing: 0.2rem;
+}
+p{
+    line-height: 1.5rem;
+}
+a:any-link { /* This pseudo-class selector selects links that have been visited and those that have not been visited. */
+    color: var(--link-COLOR);
+    text-decoration: none;
+}
+
+a:hover, a:focus-visible {
+    color: var(--linkHover-COLOR);
+    font-size: larger;
+}
+
+a:active {
+    color: var(--linkActive-COLOR);
+}
+
+
+/* Header section Styles */
+.header {
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+.header__nav {
+  background-color: var(--backgroundColor-BODY);
+  
+}
+
+.header__ul-links {
+    padding-top: 2em;
+    list-style-type: none ;
+    display: flex;
+    justify-content: center;
+
+    gap: 2rem;
+    font-size: large;
+    font-weight: 300;
+    letter-spacing: -.05rem;
+}
