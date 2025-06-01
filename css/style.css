@@ -54,11 +54,14 @@ a:active {
 
 /* Header section Styles */
 .header {
+    
     height: 100vh;
     font-family: "Poppins", sans-serif;
 }
 .header__nav {
-  background-color: var(--backgroundColor-BODY);
+    top: 0;
+    position: sticky;
+    z-index: 1; 
   
 }
 
@@ -72,4 +75,21 @@ a:active {
     font-size: large;
     font-weight: 300;
     letter-spacing: -.05rem;
+}
+
+.header__biodata {
+    min-height: calc(100vh - 60px);
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    
+    
+}
+
+#header__p{
+    font-size: medium;
 }
