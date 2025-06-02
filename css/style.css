@@ -93,3 +93,25 @@ a:active {
 #header__p{
     font-size: medium;
 }
+
+.article {
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+  display: flex;
+}
+.main__about {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+}
+.article__about-left .article__about-right {
+    /* flex: 1 1 400px; */
+    flex: 1 1 400px;
+}
+
+
