@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-/* Variables initali*/
+/* Variables initalization*/
 :root {
    --standard-top-padding: 2em; /* ensures uniform styling */
 
