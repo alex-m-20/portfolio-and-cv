@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&family=Work+Sans&display=swap');
 
 
 /* CSS RESET */
@@ -57,7 +57,14 @@ a:active {
     color: var(--linkActive-COLOR);
 }
 
-
+#tsparticles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1; /* behind your content */
+    }
 
 
 /* Header section Styles */
@@ -138,6 +145,15 @@ a:active {
     /* padding-top: var(--standard-top-padding); */
     height: var(--container-HEIGHT);
     padding: 5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    
+}
+.main p {
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    font-size: 1.7rem;
+    line-height: 3rem;
 }
 
 /* aside section */
