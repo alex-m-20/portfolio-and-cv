@@ -57,7 +57,14 @@ a:active {
     color: var(--linkActive-COLOR);
 }
 
-
+#tsparticles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1; /* behind your content */
+}
 
 
 /* Header section Styles */
@@ -139,12 +146,24 @@ a:active {
     height: var(--container-HEIGHT);
     padding: 5rem;
 }
+.main p {
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    font-size: 1.7rem;
+    line-height: 3rem;
+}
+
+
 
 /* aside section */
 .aside {
     grid-area: aside;
     height: var(--container-HEIGHT);
+    display: flex;
+    justify-content: right;
 }
+
+
 
 /* skills section */
 .skills {
@@ -152,11 +171,14 @@ a:active {
     height: var(--container-HEIGHT);
 }
 
+
+
 /* projects section */
 .projects {
     grid-area: projects;
     height: var(--container-HEIGHT);
 }
+
 
 
 /* footer section */
@@ -173,10 +195,12 @@ a:active {
     gap: 1rem;
 }
 
+
+
 /* body section- encapsulates entire page */
 .global-container {
     display: grid;
-    grid-template-columns: 2fr 7fr 3fr;
+    grid-template-columns: 2fr 6fr 4fr;
     grid-template-rows: auto;
     grid-template-areas: 
         "header header header"
