@@ -112,14 +112,23 @@ a:active {
     width: 100%;
     grid-area: homepage;
     height: calc(100vh - 10vh);
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, auto);
+
     font-family: "Poppins", sans-serif;
     letter-spacing: -.05rem;
     font-weight: lighter;
+}
+
+.homepage-box {
+    grid-column: 2 / 6;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .homepage__p-container {
@@ -128,88 +137,90 @@ a:active {
     padding-bottom: 10rem ;
     padding-top: 1rem;
 }
-.homepage h1{
-    font-size: 70px;
+.homepage__h1{
+    font-size: clamp(2.5rem, 6vw, 4.375rem);
     
 }
 .homepage p {
-    font-size: 30px;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
 }
 
 
-.about, .main, .aside{
-    min-height: var(--container-HEIGHT);
-    float: left;
-}
+
+/* 'about' parent container */
 .about {
     grid-area: about;
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "main aside";
+    min-height: var(--container-HEIGHT);
 
-
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -.05rem;
 }
+
 /* main section */
 .main {
-    width: 80%;
+    grid-area: main;
     position: sticky;
-    top: 2rem; /* required to activate 'sticky' */
-    align-self: flex-start;
-    padding: 5rem;
+    top: 3rem; /* required to activate 'sticky' */
+    align-self: start;
     height: fit-content;
-    
-    
+    padding: 5rem;
 }
 .main h1 {
     font-size: 4rem;
-    letter-spacing: -.05rem;
 }
 .main p {
     margin: 0 3rem 2rem 0; /* top-right-bottom-left */
     padding: 5rem 0 0 0;
     font-size: 2rem;
     line-height: 3rem;
+    letter-spacing: none;
 }
 
 
 
 /* aside section */
 .aside {
+    grid-area: aside;
     display: flex;
-    overflow-y: auto;
     flex-direction: column;
-    width: 20%;
+    overflow-y: auto;
+    
 }
-.aside__FrontEnd, .aside__database, .aside__typesetting, .aside__tools, .aside__prog, .aside__design {
-    padding: 1rem 0 3rem 0;
+.aside section {
+    padding-bottom: 2rem;
 }
 .aside h2 {
-    font-family: "Poppins", sans-serif;
-
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.6rem;
     letter-spacing: -.05rem;
 }
 .icon__container {
-    display: flex;
-    flex-wrap: wrap; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 2 / 4;
     gap: 2rem;
-    padding: 1rem;
+    justify-items: end;
+    padding: 2rem 1rem;
 }
 .icon {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     text-align: center;
-
+    gap: 0.5rem;
+}
+.icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
-
-/* skills section */
-.skills {
-    grid-area: skills;
-    height: var(--container-HEIGHT);
+.icon span {
+  font-size: 1rem;
+  color: white;
 }
-
 
 
 /* projects section */
@@ -220,8 +231,10 @@ a:active {
     grid-template-columns: repeat(6,1fr);
     gap: 20px;
 }
-h1 {
+.projects_h1 {
+    margin-top: 3rem;
     margin-bottom: 2rem;
+    font-size: 3rem;
     grid-column: 2/5;
 }   
 .list_container {
@@ -286,4 +299,49 @@ h1 {
         "projects projects projects"
         "footer footer footer";
 
+}
+
+
+
+/* @media (max-width: 500px) {
+    .homepage__p-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .homepage__pipe {
+        display: none;
+    }
+
+}
+ */
+
+ @media (max-width: 500px) {
+  .global-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "homepage"
+      "about"
+      "projects"
+      "footer";
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "aside";
+  }
+
+  .main {
+    grid-area: main;
+    position: relative; /* sticky not useful on small screens */
+    padding: 2rem 1rem;
+  }
+
+  .aside {
+    grid-area: aside;
+    padding: 1rem;
+  }
 }
