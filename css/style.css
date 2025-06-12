@@ -159,6 +159,10 @@ a:active {
     
     
 }
+.main h1 {
+    font-size: 4rem;
+    letter-spacing: -.05rem;
+}
 .main p {
     margin: 0 3rem 2rem 0; /* top-right-bottom-left */
     padding: 5rem 0 0 0;
@@ -211,9 +215,47 @@ a:active {
 /* projects section */
 .projects {
     grid-area: projects;
-    height: var(--container-HEIGHT);
+    min-height: var(--container-HEIGHT);
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 20px;
+}
+h1 {
+    margin-bottom: 2rem;
+    grid-column: 2/5;
+}   
+.list_container {
+  grid-column: 2 / 6; /* Start at column 2, end before 5 (spans 2,3,4) */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Show 3 columns inside */
+  gap: 20px;
 }
 
+.project__cont {
+  
+  border: 1px solid #cccccc36;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.text-area h2 {
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -.05rem;
+}
+.text-area p {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
 
 
 /* footer section */
@@ -241,7 +283,7 @@ a:active {
         "header header header"
         "homepage homepage homepage"
         "about about about"
-        "projects projects skills"
+        "projects projects projects"
         "footer footer footer";
 
 }
