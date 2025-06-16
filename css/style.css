@@ -138,11 +138,11 @@ a:active {
     padding-top: 1rem;
 }
 .homepage__h1{
-    font-size: clamp(2.5rem, 6vw, 4.375rem);
+    font-size: clamp(2.0rem, 7vw, 3.5rem);
     
 }
 .homepage p {
-    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    font-size: clamp(1.0rem, 3vw, 1.875rem);
 }
 
 
@@ -169,12 +169,14 @@ a:active {
     padding: 5rem;
 }
 .main h1 {
-    font-size: 4rem;
+    /* font-size: 4rem; */
+    font-size: clamp(2.0rem, 7vw, 3.5rem);
 }
 .main p {
     margin: 0 3rem 2rem 0; /* top-right-bottom-left */
     padding: 5rem 0 0 0;
-    font-size: 2rem;
+    /* font-size: 2rem; */
+    font-size: clamp(1.5rem, 3vw, 2.0rem);
     line-height: 3rem;
     letter-spacing: none;
 }
@@ -234,18 +236,18 @@ a:active {
 .projects_h1 {
     margin-top: 3rem;
     margin-bottom: 2rem;
-    font-size: 3rem;
+    /* font-size: 3rem; */
+    font-size: clamp(2.0rem, 8vw, 3.0rem);
     grid-column: 2/5;
 }   
 .list_container {
   grid-column: 2 / 6; /* Start at column 2, end before 5 (spans 2,3,4) */
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Show 3 columns inside */
+  grid-template-columns: repeat(2, 1fr); /* Show 2 columns inside */
   gap: 20px;
 }
 
 .project__cont {
-  
   border: 1px solid #cccccc36;
   padding: 1rem;
   border-radius: 8px;
@@ -303,17 +305,12 @@ a:active {
 
 
 
-/* @media (max-width: 500px) {
-    .homepage__p-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .homepage__pipe {
-        display: none;
-    }
-
-}
- */
+/* MEDIA QUERIES */
+ @media (max-width: 1050px) {
+    .homepage .homepage__p-container {
+    text-align: center;
+  }
+ }
 
  @media (max-width: 500px) {
   .global-container {
@@ -326,6 +323,20 @@ a:active {
       "footer";
   }
 
+  .homepage .homepage__p-container .homepage__pipe {
+    display: none;
+  }
+  .homepage .homepage__p-container {
+    display: block;
+    text-align: center;
+  }
+  .homepage .homepage__p1 {
+    font-size: x-large;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+ /*  aligns child containters in a single column  */
   .about {
     display: grid;
     grid-template-columns: 1fr;
@@ -333,7 +344,13 @@ a:active {
       "main"
       "aside";
   }
-
+  .about .main {
+    height: 100vh;
+  }
+  .about .aside .icon__container {
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+}
   .main {
     grid-area: main;
     position: relative; /* sticky not useful on small screens */
@@ -343,5 +360,11 @@ a:active {
   .aside {
     grid-area: aside;
     padding: 1rem;
+  }
+
+
+  /* aligns projects in a single column */
+  .projects .list_container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
