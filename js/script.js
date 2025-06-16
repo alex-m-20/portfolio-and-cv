@@ -15,7 +15,7 @@ const options = {
     },
     modes: {
       push: {
-        quantity: 7,
+        quantity: 2,
       },
       repulse: {
         distance: 70,
@@ -31,8 +31,8 @@ const options = {
     move: {
       enable: true,
       speed: { 
-            min: 0.5, 
-            max: 1 },
+            min: 0.2, 
+            max: 0.6 },
     },
     opacity: {
       value: { 
@@ -42,7 +42,7 @@ const options = {
     size: {
       value: { 
             min: 1, 
-            max: 3 },
+            max: 2 },
     },
   },
 };
