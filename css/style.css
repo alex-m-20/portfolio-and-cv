@@ -11,9 +11,7 @@
 /* Variables initalization*/
 :root {
    --standard-top-padding: 2em; /* ensures uniform styling */
-
    --container-HEIGHT: 100vh;
-
    --marginals-HEIGHT: 10vh;
 
    /*  Fonts */
@@ -257,6 +255,7 @@ a:active {
 
 .image img {
   width: 100%;
+  height: 20rem;
   border-radius: 6px;
   object-fit: cover;
 }
@@ -270,6 +269,9 @@ a:active {
 .text-area p {
   margin-top: 1rem;
   font-size: 1.5rem;
+}
+.project_link a {
+  color: #5f5e5e;
 }
 
 
